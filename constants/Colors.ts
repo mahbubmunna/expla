@@ -10,3 +10,19 @@ export const Colors = {
   border: '#334155',
 };
 
+export const Layout = {
+  spacing: {
+    xs: 4,
+    s: 8,
+    m: 16,
+    l: 24,
+    xl: 32,
+    xxl: 48,
+  },
+  borderRadius: {
+    s: 8,
+    m: 16,
+    l: 24,
+    circle: 9999,
+  },
+};

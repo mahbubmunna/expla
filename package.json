@@ -4,7 +4,7 @@
   "main": "index.ts",
   "scripts": {
     "start": "expo start"
-  },
+  , "expo-av": "~16.0.8" },
   "dependencies": {
     "expo": "~54.0.33",
     "react": "19.1.0",

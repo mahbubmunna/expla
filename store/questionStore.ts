@@ -10,7 +10,7 @@ interface QuestionState {
     updateQuestion: (id: string, updates: Partial<Question>) => void;
     archiveQuestion: (id: string) => void;
     deleteQuestion: (id: string) => void;
-    /* pending */: () => Question[];
+    getWeeklyReviewQuestions: () => Question[];
 }
 
 export const useQuestionStore = create<QuestionState>()(

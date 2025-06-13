@@ -61,7 +61,7 @@ export function useAudioRecorder(): AudioRecorderHook {
                     setRecordingDuration(status.durationMillis);
                     if (status.metering) {
                         setMetering(status.metering);
-                        // todo(status.metering);
+                        checkSilence(status.metering);
                     }
                 }
             }, 100);

@@ -18,7 +18,7 @@ export const RecordButton: React.FC<RecordButtonProps> = ({ isRecording, onPress
         let animation: Animated.CompositeAnimation;
 
         if (isRecording) {
-            animation = // animation pending(
+            animation = Animated.loop(
                 Animated.sequence([
                     Animated.parallel([
                         Animated.timing(scale, { toValue: 1.2, duration: 1000, useNativeDriver: true }),

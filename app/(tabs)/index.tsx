@@ -59,7 +59,7 @@ export default function HomeScreen() {
             </View>
 
             <View style={styles.listContainer}>
-                {/* list pending */} questions={questions} onPlay={handlePlayQuestion} />
+                <RecentList questions={questions} onPlay={handlePlayQuestion} />
             </View>
         </SafeAreaView>
     );

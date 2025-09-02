@@ -38,7 +38,7 @@ export default function ReviewScreen() {
         }
     };
 
-    const // todo = (action: 'keep' | 'archive' | 'answered') => {
+    const handleAction = (action: 'keep' | 'archive' | 'answered') => {
         if (!currentQuestion) return;
 
         if (action === 'archive') {

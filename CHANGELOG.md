@@ -1,0 +1,31 @@
+# Changelog
+
+- 2025-02-10: Initial project structure setup
+- 2025-03-10: Fix permission usage description in Info.plist
+- 2025-04-06: Update dependencies
+- 2025-04-15: Optimize startup time
+- 2025-05-03: Fix crash on recording stop
+- 2025-05-22: Add storage limits
+- 2025-06-18: Add feedback haptics
+- 2025-06-27: Fix dark mode contrast
+- 2025-07-06: Update icon set
+- 2025-07-15: Improve font loading strategy
+- 2025-07-25: Add unit tests for utils
+- 2025-08-03: Fix navigation glitch
+- 2025-08-12: Add empty state for list
+- 2025-08-21: Update revisit algorithm
+- 2025-08-30: Fix date formatting
+- 2025-09-08: Remove unused assets
+- 2025-09-17: Add accessibility labels
+- 2025-09-26: Fix header alignment
+- 2025-10-06: Implement audio player controls
+- 2025-10-15: Fix buffer underrun in player
+- 2025-11-02: Add pull to refresh
+- 2025-11-11: Fix state persistence bug
+- 2025-11-29: Refactor hooks
+- 2025-12-08: Add error boundary
+- 2025-12-18: Clean up logs
+- 2025-12-27: Fix android build issue
+- 2026-01-05: Tweak button animations
+- 2026-01-14: Add delete confirmation
+- 2026-01-23: Update typescript config

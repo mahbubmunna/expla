@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
-import { View, StyleSheet, SafeAreaView, Text, Alert } from 'react-native';
+import { View, StyleSheet, Text, Alert } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { RecordButton } from '../../components/RecordButton';
 import { RecentList } from '../../components/RecentList';
 import { Colors, Layout } from '../../constants/Colors';

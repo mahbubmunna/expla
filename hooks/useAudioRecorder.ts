@@ -111,5 +111,3 @@ export function useAudioRecorder(): AudioRecorderHook {
         hasPermission,
     };
 }
-
-// fixed

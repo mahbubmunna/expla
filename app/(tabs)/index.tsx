@@ -94,5 +94,3 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.background, // Ensure clean transition
     }
 });
-
-// refined

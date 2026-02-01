@@ -65,7 +65,7 @@ export default function HomeScreen() {
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.headerContainer}>
-                <Text style={styles.title}>expla</Text>
+                <Text style={styles.title}>Expla</Text>
                 <Text style={styles.subtitle}>Capture now. Understand later.</Text>
             </View>
 

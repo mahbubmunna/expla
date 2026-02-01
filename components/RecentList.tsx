@@ -2,19 +2,24 @@ import React from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 import { Colors, Layout } from '../constants/Colors';
 import { Question } from '../types/question';
-import { Play, Clock } from 'lucide-react-native';
+import { Play, Clock, Square } from 'lucide-react-native';
 import { formatDistanceToNow } from 'date-fns';
 
 interface RecentListProps {
     questions: Question[];
     onPlay: (question: Question) => void;
+    playingId: string | null;
 }
 
-export const RecentList: React.FC<RecentListProps> = ({ questions, onPlay }) => {
+export const RecentList: React.FC<RecentListProps> = ({ questions, onPlay, playingId }) => {
     const renderItem = ({ item }: { item: Question }) => (
         <TouchableOpacity style={styles.item} onPress={() => onPlay(item)}>
             <View style={styles.iconContainer}>
-                <Play size={20} color={Colors.secondary} fill={Colors.secondary} />
+                {playingId === item.id ? (
+                    <View style={styles.playingDot} />
+                ) : (
+                    <Play size={20} color={Colors.secondary} fill={Colors.secondary} />
+                )}
             </View>
             <View style={styles.content}>
                 <Text style={styles.date}>
@@ -113,5 +118,11 @@ const styles = StyleSheet.create({
     durationText: {
         color: Colors.textDim,
         fontSize: 12,
+    },
+    playingDot: {
+        width: 12,
+        height: 12,
+        borderRadius: 6,
+        backgroundColor: Colors.primary,
     }
 });

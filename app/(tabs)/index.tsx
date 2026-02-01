@@ -8,6 +8,8 @@ import { useQuestionStore } from '../../store/questionStore';
 import { Audio } from 'expo-av';
 
 export default function HomeScreen() {
+    const [playingId, setPlayingId] = React.useState<string | null>(null);
+
     const {
         startRecording,
         stopRecording,
@@ -34,19 +36,36 @@ export default function HomeScreen() {
     };
 
     const handlePlayQuestion = async (question: any) => {
-        // Simple one-off playback for verification
+        if (playingId === question.id) {
+            // Stop logic could be here if we kept the sound instance ref
+            // For MVP, simplistic toggle or just ignore re-press
+            return;
+        }
+
         try {
-            const { sound } = await Audio.Sound.createAsync({ uri: question.audioUri });
+            setPlayingId(question.id);
+            const { sound } = await Audio.Sound.createAsync(
+                { uri: question.audioUri },
+                { shouldPlay: true }
+            );
+
+            sound.setOnPlaybackStatusUpdate((status) => {
+                if (status.isLoaded && status.didJustFinish) {
+                    setPlayingId(null);
+                }
+            });
+
             await sound.playAsync();
         } catch (e) {
             Alert.alert("Error", "Could not play audio file.");
+            setPlayingId(null);
         }
     };
 
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.headerContainer}>
-                <Text style={styles.title}>Explain-It-Later</Text>
+                <Text style={styles.title}>expla</Text>
                 <Text style={styles.subtitle}>Capture now. Understand later.</Text>
             </View>
 
@@ -59,7 +78,11 @@ export default function HomeScreen() {
             </View>
 
             <View style={styles.listContainer}>
-                <RecentList questions={questions} onPlay={handlePlayQuestion} />
+                <RecentList
+                    questions={questions}
+                    onPlay={handlePlayQuestion}
+                    playingId={playingId}
+                />
             </View>
         </SafeAreaView>
     );
